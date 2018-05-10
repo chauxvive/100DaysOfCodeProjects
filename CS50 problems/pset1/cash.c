@@ -18,7 +18,7 @@ int main(void)
     while(cash<0);
 
 //avoid imprecision by converting to cents
-int cents = cash*100;
+int cents = cash*100+.5;
 
 int count = 0;
 
