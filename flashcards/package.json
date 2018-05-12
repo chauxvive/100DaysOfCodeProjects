@@ -1,0 +1,15 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "Flashcard app via TeamTreehouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MPaul",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
