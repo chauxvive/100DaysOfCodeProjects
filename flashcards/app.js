@@ -8,10 +8,12 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/cards', (req, res) => {
-    res.render("card",{ "What does ikigai mean?"});
-});
+app.get('/cards', (req, res) => { 
+    res.render(
+      'card', 
+      { prompt: "Who is buried in Grant's tomb?" }); 
+  });
 
 app.listen(3000, () => {
-    console.log('The application is running on localhost:3000')
+    console.log('The application is running on localhost:3000');
 });
