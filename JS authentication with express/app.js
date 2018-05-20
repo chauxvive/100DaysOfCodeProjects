@@ -11,6 +11,12 @@ app.use(session({
   saveUninitialized: false 
 }));
 
+//make user ID available elsewhere
+app.use(function (req,res,next) {
+  res.locals.currentUser = req.session.userId;
+  next();
+});
+
 
 // mongodb connect to mongoose
 mongoose.connect("mongodb://localhost:27017/bookworm");
