@@ -8,8 +8,23 @@ var jsonParser = require("body-parser").json;
 var logger = require("morgan");
 
 app.use(logger("dev"));
-
 app.use(jsonParser());
+
+
+var mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost:27017/sandbox");
+
+var db = mongoose.connection;
+
+db.on("error", function(){
+    console.log("There were problems", err);
+});
+
+db.once("open", function(){
+    console.log("looks like db connection works bro");
+});
+
 
 app.use("/questions", routes);
 
