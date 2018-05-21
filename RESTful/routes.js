@@ -38,11 +38,11 @@ router.post("/:id/answers", function(req, res){
 
 //PUT /questions/:qid/answers/:aid
 //edit a specific answer
-router.put(":qid/answers:aid", function(req, res){
+router.put('/:id/answers/:aID', function(req, res){
     res.json({
-        response: "You sent a PUT req to /answers",
-        questionId: req.params.qid,
-        answerId: req.params.aid,
+        response: 'You sent a PUT req to /answer ' + req.params.aID,
+        questionID: req.params.id,
+        answerID: req.params.aID,
         body: req.body
     });
 });
@@ -50,10 +50,10 @@ router.put(":qid/answers:aid", function(req, res){
 
 
 //POST /questions/:qid/answers
-router.post("/:qid/answers", function(req, res){
+router.post("/:id/answers", function(req, res){
     res.json({
         response: "You sent a POST req to /answers",
-        questionId: req.params.qid,
+        questionId: req.params.id,
         body: req.body
     });
 });
@@ -61,11 +61,11 @@ router.post("/:qid/answers", function(req, res){
 
 //DELETE /questions/:qid/answers/:aid
 //delete a specific answer
-router.delete(":qid/answers:aid", function(req, res){
+router.delete('/:id/answers/:aID', function(req, res){
     res.json({
-        response: "You sent a DELETE req to /answers",
-        questionId: req.params.qid,
-        answerId: req.params.aid,
+        response: 'You sent a DELETE req to /answer ' + req.params.aID,
+        questionID: req.params.id,
+        answerID: req.params.aID,
     });
 });
 
@@ -73,14 +73,23 @@ router.delete(":qid/answers:aid", function(req, res){
 //POST /questions/:qid/answers/:aid/vote-up
 //POST /questions/:qid/answers/:aid/vote-down
 //vote on a specific answer
-router.post(":qid/answers:aid/vote-:dir", function(req, res){
-    res.json({
-        response: "You sent a POST req to /vote-"+ req.params.dir,
-        questionId: req.params.qid,
-        answerId: req.params.aid,
-        vote: req.params.dir
-    });
+router.post('/:id/answers/:aID/vote-:dir', function(req, res, next) {
+    if(req.params.dir.search(/^up|down$/) === -1){
+        var err = new Error('Parameter Not Found');
+        err.status = 404;
+        next(err);
+    } else {
+        next();
+    }
+}, function(req, res){
+res.json({
+    response: 'You sent a POST request to /vote-' + req.params.dir,
+    userID: req.params.id,
+    accountID: req.params.aID,
+    vote: req.params.dir
 });
+});
+
 
 
 module.exports = router;
