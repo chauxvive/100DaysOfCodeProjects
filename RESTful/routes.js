@@ -2,21 +2,30 @@
 
 var express = require("express");
 var router = express.Router();
+var Question = require("./models").Question;
 
 
 //GET /questions
-router.get("/", function(req, res){
+router.get("/", function(req, res, next){
     //return all questions
-    res.json({response: "You sent a GET req"});
+    Question.find({})
+                .sort({createdAt: -1}) 
+                .exec(function(err, questions){
+                    if(err) return next(err);
+                    res.json(questions);
+                });
+    //res.json({response: "You sent a GET req"});
 });
 
 //POST /questions
-router.post("/", function(req, res){
-    //return all questions
-    res.json({
-        response: "You sent a POST req",
-        body: req.body
+router.post("/", function(req, res, next){
+    var question = new Question(req.body);
+    question.save(function(err, question){
+        if(err) return next(err);
+        res.status(201);
+        res.json(question);
     });
+    //return all questions
 });
 
 //GET /questions/:qid
