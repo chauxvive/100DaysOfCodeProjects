@@ -4,6 +4,7 @@ var express = require("express");
 var app = express();
 var routes = require("./routes");
 
+
 var jsonParser = require("body-parser").json;
 var logger = require("morgan");
 
@@ -23,6 +24,16 @@ db.on("error", function(){
 
 db.once("open", function(){
     console.log("looks like db connection works bro");
+});
+
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    if(req.method === "OPTIONS"){
+        res.header("Access-Control-Allow-Methods", "PUT,POST,DELETE");
+        return res.status(200).json({});
+    }
+    next();
 });
 
 

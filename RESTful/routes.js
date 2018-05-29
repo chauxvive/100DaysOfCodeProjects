@@ -26,7 +26,7 @@ router.param("aID", function(req, res, next, id){
     }
 });    
 
-//GET /questions
+//GET /questions //this one works
 router.get("/", function(req, res, next){
     //return all questions
     Question.find({})
@@ -38,7 +38,7 @@ router.get("/", function(req, res, next){
     //res.json({response: "You sent a GET req"});
 });
 
-//POST /questions
+//POST /questions //this one works
 router.post("/", function(req, res, next){
     var question = new Question(req.body);
     question.save(function(err, question){
@@ -49,16 +49,16 @@ router.post("/", function(req, res, next){
     //return all questions
 });
 
-//GET /questions/:qid
+//GET /questions/:qid //gives 200 but doesn't work?
 router.get("/:id", function(req, res){
         res.json(req.question);
-    //})
-    //res.json({
-    //    response: "You sent a GET req for ID "+ req.params.id
+    })
+    res.json({
+        response: "You sent a GET req for ID "+ req.params.id
 });
 
 
-//POST /questions/:qid/answers
+//POST /questions/:id/answers //500 error, doesn't work
 router.post("/:id/answers", function(req, res, next){
     req.question.answers.push(req.body);
     req.question.save(function(err,question){
