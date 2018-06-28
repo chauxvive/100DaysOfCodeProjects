@@ -1,6 +1,5 @@
 // the global variable
-var watchList = [
-  {
+var watchList = [{
     "Title": "Inception",
     "Year": "2010",
     "Rated": "PG-13",
@@ -114,18 +113,14 @@ var watchList = [
 
 // Add your code below this line
 
-var rating = watchList.map(({ Title: title, imdbRating: rating }) => ({
+var filteredList = watchList.map(({
+  Title: title,
+  imdbRating: rating
+}) => ({
   title,
   rating
 }));
 
-//var rating = [];
-//watchList.map((val, i, arr) => {
-//  rating.push(`{"title":"${val.Title}","rating":"${val.imdbRating}"}`);
-//});
-
-//watchList.map((item) => ({ title: item.Title, rating: item.imdbRating })
-
 // Add your code above this line
 
-console.log(rating); 
+console.log(filteredList);
