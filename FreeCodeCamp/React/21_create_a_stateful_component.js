@@ -2,7 +2,9 @@ class StatefulComponent extends React.Component {
     constructor(props) {
         super(props);
         // initialize state here
-
+        this.state = {
+            name: "Mary"
+        }
     }
     render() {
         return ( <
