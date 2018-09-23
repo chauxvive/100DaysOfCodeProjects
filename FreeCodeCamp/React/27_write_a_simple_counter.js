@@ -32,8 +32,7 @@ class Counter extends React.Component {
 
     // change code above this line
     render() {
-        return ( <
-            div >
+        return ( <div >
             <
             button className = 'inc'
             onClick = {
