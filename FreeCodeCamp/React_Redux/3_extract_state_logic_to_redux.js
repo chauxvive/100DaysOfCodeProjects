@@ -1,20 +1,20 @@
 // define ADD, addMessage(), messageReducer(), and store here:
-const ADD = 'ADD'
+const ADD = 'ADD';
 
-function addMessage(input) {
-    type: ADD,
-    message: input
-}
+const addMessage = (message) => {
+    return {
+        type: ADD,
+        message: message
+    };
+};
 
 const messageReducer = (state = [], action) => {
     // change code below this line
     if (action.type === ADD) {
-        return {
-            [...input]
-        }
-    }
+        return [...state, action.message]
+    };
     return state;
-    // change code above this line
-};
+}
+// change code above this line
 
 const store = Redux.createStore(messageReducer);
