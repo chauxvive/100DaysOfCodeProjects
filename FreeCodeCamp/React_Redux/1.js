@@ -1,14 +1,14 @@
 class DisplayMessages extends React.Component {
   // change code below this line
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      input: '',
-      messages:[]
-    }
+      input: "",
+      messages: []
+    };
   }
   // change code above this line
   render() {
-    return <div />
+    return <div />;
   }
-};
+}
