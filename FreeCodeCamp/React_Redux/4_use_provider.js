@@ -49,34 +49,21 @@ class DisplayMessages extends React.Component {
         });
     }
     render() {
-        return ( <
-            div >
-            <
-            h2 > Type in a new Message: < /h2> <
-            input value = {
-                this.state.input
-            }
-            onChange = {
-                this.handleChange
-            }
-            /><br/ >
-            <
-            button onClick = {
-                this.submitMessage
-            } > Submit < /button> <
-            ul > {
-                this.state.messages.map((message, idx) => {
-                    return ( <
-                        li key = {
-                            idx
-                        } > {
-                            message
-                        } < /li>
+        return ( < div >
+            <h2> Type in a new Message: </h2> 
+            <input value = {this.state.input}
+            onChange = {this.handleChange} />
+            <br/>
+            <button 
+                onClick = {this.submitMessage} > Submit < /button> 
+            <ul> 
+                {this.state.messages.map((message, idx) => {
+                    return ( 
+                        <li key = {idx} > {message} </li>
                     )
                 })
-            } <
-            /ul> <
-            /div>
+            } </ul> 
+            </div>
         );
     }
 };
@@ -87,13 +74,9 @@ class AppWrapper extends React.Component {
         // render the Provider here
         render() {
             return ( <
-                Provider store = {
-                    store
-                } >
-                <
-                DisplayMessages / >
-                <
-                /Provider>)
+                Provider store = { store } >
+                < DisplayMessages / >
+                < /Provider>)
             }
             // change code above this line
         };
