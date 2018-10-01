@@ -84,7 +84,16 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-    // render the Provider here
-
-    // change code above this line
-};
+        // render the Provider here
+        render() {
+            return ( <
+                Provider store = {
+                    store
+                } >
+                <
+                DisplayMessages / >
+                <
+                /Provider>)
+            }
+            // change code above this line
+        };
