@@ -7,11 +7,10 @@
         /* Add your code above this line */
         display: inline - block;
         background - color: blue;
-    } <
-    /style> <
-    body >
-    <
-    script >
+    } </style> 
+    
+    < body >
+    <script >
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
 d3.select("body").selectAll("div")

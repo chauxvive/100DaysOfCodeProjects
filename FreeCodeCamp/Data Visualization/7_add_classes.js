@@ -4,11 +4,9 @@
         height: 100 px;
         display: inline - block;
         background - color: blue;
-    } <
-    /style> <
-    body >
-    <
-    script >
+    } </style> 
+    <body >
+    <script >
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
 d3.select("body").selectAll("div")
@@ -20,6 +18,4 @@ d3.select("body").selectAll("div")
 
 
 // Add your code above this line
-<
-/script> <
-/body>
+</script> <S/body>
