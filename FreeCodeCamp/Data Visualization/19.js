@@ -1,4 +1,9 @@
-< body >
+< style >
+    .bar: hover {
+        fill: brown;
+    } <
+    /style> <
+    body >
     <
     script >
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -19,17 +24,21 @@ svg.selectAll("rect")
     .attr("y", (d, i) => h - 3 * d)
     .attr("width", 25)
     .attr("height", (d, i) => 3 * d)
-    .attr("fill", "navy");
+    .attr("fill", "navy")
+    // Add your code below this line
+    .attr("class", "bar")
+
+
+// Add your code above this line
 
 svg.selectAll("text")
     .data(dataset)
     .enter()
-    // Add your code below this line
     .append("text")
-    .text(d => d)
+    .text((d) => d)
     .attr("x", (d, i) => i * 30)
-    .attr("y", (d, i) => h - 3 * d - 3)
-    // Add your code above this line
-    <
-    /script> <
-    body >
+    .attr("y", (d, i) => h - (3 * d) - 3);
+
+<
+/script> <
+/body>
