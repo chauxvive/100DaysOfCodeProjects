@@ -1,8 +1,38 @@
+    const GRID = [
+        ["", "", "", "^", "", "", "", "", "", ""],
+        ["", "", "v", "", "~", "", "", "", "", ""],
+        ["", "v", "", "", "^", "^", "", "", "", ""],
+        ["", "", "", "", "^", "^", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "v", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "^", "~", "~", "", "", "", "^", "", ""],
+        ["", "^", "", "~", "~", "", "", "", "", ""],
+        ["", "^", "", "", "~", "~", "", "", "", ""],
+    ];
+
+function countRows() {
+    return GRID.length
+}
+
+function countColumns() {
+    return GRID[0].length
+}
+
+
+function gridSize() {
+    return countColumns().toString() + " x " + countRows().toString();
+}
+
+function totalCells() {
+    return countColumns() * countRows();
+}
+
 function convertColumn(i) {
     let x = i.split("");
     let a = x[0];
     switch (a) {
-        case "A": 
+        case "A":
             return 0
             break;
         case "B":
@@ -81,12 +111,15 @@ function convertColumn(i) {
             return 25
             break;
         default:
-            return x         
-    } 
+            return x
+    }
 }
 
-//try this later:
-//const alphaVal = (s) => s.toLowerCase().charCodeAt(0) - 97 + 1
-//https://stackoverflow.com/questions/22624379/how-to-convert-letters-to-numbers-with-javascript
+function lightCell(a) {
+    let x = a.split("");
+    let b = x[1]
+    let c = GRID[convertColumn(a)]
+    return c[2].toString();
+}
 
-console.log(convertColumn("C1"));
+console.log(lightCell('B1'));
