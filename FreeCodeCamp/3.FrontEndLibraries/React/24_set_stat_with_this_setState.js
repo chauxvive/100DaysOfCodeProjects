@@ -8,22 +8,14 @@ class MyComponent extends React.Component {
     }
     handleClick() {
         // change code below this line
-        this.setState({
-            name: 'React Rocks!'
-        })
+        this.setState({name: 'React Rocks!'})
         // change code above this line
     }
     render() {
-        return ( <
-            div >
-            <
-            button onClick = {
-                this.handleClick
-            } > Click Me < /button> <
-            h1 > {
-                this.state.name
-            } < /h1> <
-            /div>
+        return ( <div >
+            <button onClick = {this.handleClick} > Click Me </button> 
+                <h1> {this.state.name} </h1> 
+            </div>
         );
     }
 };

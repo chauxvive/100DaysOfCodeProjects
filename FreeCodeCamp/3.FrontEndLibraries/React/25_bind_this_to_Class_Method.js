@@ -14,15 +14,13 @@ class MyComponent extends React.Component {
         });
     }
     render() {
-        return ( <
-            div > { /* change code below this line */ } <
-            button onClick = {
-                this.addItem
-            } > Click Me < /button> { /* change code above this line */ } <
-            h1 > Current Item Count: {
-                this.state.itemCount
-            } < /h1> <
-            /div>
+        return ( 
+            <div> 
+                { /* change code below this line */ } 
+                <button onClick = {this.addItem}> Click Me </button> 
+                { /* change code above this line */ } 
+                <h1> Current Item Count: {this.state.itemCount} </h1> 
+            </div>
         );
     }
 };

@@ -7,13 +7,12 @@ class StatefulComponent extends React.Component {
         }
     }
     render() {
-        return ( <
-            div >
-            <
-            h1 > {
-                this.state.name
-            } < /h1> <
-            /div>
+        return ( 
+            <div >
+                <h1> 
+                    {this.state.name} 
+                </h1> 
+            </div>
         );
     }
 };

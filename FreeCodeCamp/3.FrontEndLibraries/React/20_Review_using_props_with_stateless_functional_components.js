@@ -3,12 +3,10 @@ class CampSite extends React.Component {
         super(props);
     }
     render() {
-        return ( <
-            div >
-            <
-            Camper / >
-            <
-            /div>
+        return ( 
+            <div >
+                <Camper />
+            </div>
         );
     }
 };
@@ -19,10 +17,9 @@ class Camper extends React.Component {
         super(props);
     }
     render() {
-        return ( <
-            p > {
-                this.props.name
-            } < /p>
+        return ( 
+            <p> 
+            {this.props.name} </p>
         )
     }
 }

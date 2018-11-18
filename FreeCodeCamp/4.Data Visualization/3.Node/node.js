@@ -5,13 +5,13 @@ var bodyParser = require('body-parser');
 
 // --> 7)  Mount the Logger middleware here
 app.use((req, res, next) => {
-    console.log(req.method + " " + req.path + " - " + req.ip)
+    console.log(req.method + " " + req.path + " - " + req.ip);
     next();
 });
 
 
 // --> 11)  Mount the body-parser middleware  here
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -61,7 +61,7 @@ app.get('/now', function (req, res, next) {
 }, function (req, res) {
     res.send({
         time: req.time
-    })
+    });
 });
 
 /** 9)  Get input from client - Route parameters */

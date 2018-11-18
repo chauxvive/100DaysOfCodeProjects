@@ -1,4 +1,4 @@
-var UNITS = {
+const coins = {
     "PENNY": 0.01,
     "NICKEL": 0.05,
     "DIME": 0.1,
@@ -24,7 +24,7 @@ function checkCashRegister(price, cash, cid) {
     var pendingDiff = cash - price;
 
     for (var cuidx = cid.length - 1; cuidx >= 0 && pendingDiff > 0; --cuidx) {
-        var unitValue = UNITS[cid[cuidx][0]];
+        var unitValue = coins[cid[cuidx][0]];
         var unitQuantity = cid[cuidx][1] / unitValue;
 
         if (unitQuantity > 0 && unitValue <= pendingDiff) {
