@@ -22,6 +22,8 @@ function countPositivesSumNegatives(input) {
     return [posCount, negSum];
 }
 
+//refactored:
+
 //for (var i=0, i<input.length; ++i)
 //{ if (input[i]>0)
 //    ++pos;
