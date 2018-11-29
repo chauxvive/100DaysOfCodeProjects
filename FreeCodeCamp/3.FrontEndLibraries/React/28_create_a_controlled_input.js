@@ -18,20 +18,15 @@ class ControlledInput extends React.Component {
 
     // change code above this line
     render() {
-        return ( <
-            div > { /* change code below this line */ } <
-            input value = {
-                this.state.input
-            }
-            onChange = {
-                this.handleChange
-            }
-            /> { /* change code above this line */ } <
-            h4 > Controlled Input: < /h4> <
-            p > {
-                this.state.input
-            } < /p> <
-            /div>
+        return ( 
+            <div> 
+                { /* change code below this line */ } 
+                    <input value = {this.state.input}
+                    onChange = {this.handleChange}/> 
+                { /* change code above this line */ } 
+            <h4> Controlled Input: </h4> 
+            <p> {this.state.input} </p> 
+            </div>
         );
     }
 };
