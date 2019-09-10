@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form demo</title>
+</head>
+<body>
+<h1>Login</h1> 
+
+<!-- action- where form sends data to-->
+<!-- method - what http method get or post-->
+
+<form> 
+<!-- action="http://wikipedia.org" method="GET"-->
+<!-- <label>Email<input name="email" type="email" required></label> -->
+<label> Username <input name="username" type="text" placeholder="login" required></label>
+<label> Password <input name="password" type="password" placeholder="password" required></label>
+
+<label for="dogs">Dogs: </label>
+<input name="preferredPet" id="dogs" type="radio" value="dogs">
+
+<label for="cast">Cats: </label>
+<input name="preferredPet" id="cats" type="radio" value="cats">
+
+<select name="color">
+    <option>Red</option>
+    <option>Blue</option>
+    <option value="goldenrod">Yellow</option>
+</select>
+
+<button>Go!</button>
+
+
+
+<!-- <input type="submit"> -->
+<!-- if button is last item in a form element, it automatically submits -->
+
+<!-- 
+    alt form:
+<label for="username">Username</label>
+<input id="username" type="text">
+
+-> this still connects label to input id for accessibilty needs
+(important)
+
+-->
+</form>
+
+</body>
+</html>
+
