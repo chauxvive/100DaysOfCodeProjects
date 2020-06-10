@@ -1,5 +1,5 @@
 function convertHTML(str) {
-    str=str.replaceAll('&',"&amp;").replace('<',"&lt;");
+    str = str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
     console.log(str);
 }
     //var mapObj = {
@@ -9,16 +9,15 @@ function convertHTML(str) {
 
 convertHTML("Dolce & Gabbana");
 //should return "Dolce &amp; Gabbana".
-
-convertHTML("Hamburgers < Pizza < Tacos") 
+convertHTML("Hamburgers < Pizza < Tacos"); 
 //should return "Hamburgers &lt; Pizza &lt; Tacos".
-//convertHTML("Sixty > twelve") 
+convertHTML("Sixty > twelve"); 
 //should return "Sixty &gt; twelve".
-//convertHTML('Stuff in "quotation marks"') 
+convertHTML('Stuff in "quotation marks"'); 
 //should return "Stuff in &quot;quotation marks&quot;".
-//convertHTML("Schindler's List") 
+convertHTML("Schindler's List"); 
 //should return "Schindler&apos;s List".
-//convertHTML("<>") 
+convertHTML("<>") 
 //should return "&lt;&gt;".
-//convertHTML("abc") 
+convertHTML("abc") 
 //should return "abc".
