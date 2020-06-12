@@ -2,12 +2,6 @@ function dropElements(arr, func) {
 
 
     while(!func(arr[0])&&arr.length>0){
-    
-    //   if (arr.length=0){
-    //        console.log(0);
-    //        break;
-    //    }
-
         arr.shift();
     }
 
