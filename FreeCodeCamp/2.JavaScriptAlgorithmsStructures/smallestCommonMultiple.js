@@ -57,13 +57,13 @@ smallestCommons([1, 5]);
 //1,2,3,4,5
 //5*
 
-smallestCommons([2, 10]) 
+smallestCommons([2, 10]) ;
 //should return 2520.
 //2*10*9*8*7*6*5*4*3
 
-smallestCommons([1, 13]) 
+smallestCommons([1, 13]) ;
 //should return 360360.
-smallestCommons([23, 18]) 
+smallestCommons([23, 18]) ;
 //should return 6056820.
 
 //Find the smallest common multiple of the provided parameters that can be evenly divided by both, 

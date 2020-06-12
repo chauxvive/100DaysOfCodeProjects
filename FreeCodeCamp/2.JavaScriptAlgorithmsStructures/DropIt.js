@@ -1,10 +1,42 @@
 function dropElements(arr, func) {
-    console.log(arr);
-    console.log(func);
-    arr = arr.shift(n => func);
+
+
+    while(!func(arr[0])&&arr.length>0){
+    
+    //   if (arr.length=0){
+    //        console.log(0);
+    //        break;
+    //    }
+
+        arr.shift();
+    }
+
     console.log(arr);
     return arr;
 }
+
+
+
+
+    // for (let i=0; i<arr.length; i++){
+    //     if (func(arr[0])){
+    //         break;
+    //     } else {
+    //         arr.shift;
+    //     }
+    // }
+    
+
+    //targetElement = arr.shift();
+   // console.log(arr); 
+   // console.log(func);
+   // targetElement = arr.shift(n => func);
+
+
+
+    //console.log(arr);
+//    console.log(newArray);
+   // return arr;
 
 
 //.shift
@@ -18,29 +50,25 @@ function dropElements(arr, func) {
 
 //const result = words.filter(word => word.length>6);
 
+//dropElements([1, 2, 3], function (n) {return n < 3;});
 
 
-
-dropElements([1, 2, 3], function (n) {
-    return n < 3;
-});
-
-dropElements([1, 2, 3, 4], function (n) {return n >= 3;}) 
+dropElements([1, 2, 3, 4], function (n) {return n >= 3;}); 
 //should return [3, 4].
 
-//dropElements([0, 1, 0, 1], function (n) {return n === 1;}) 
+dropElements([0, 1, 0, 1], function (n) {return n === 1;}) 
 //should return [1, 0, 1].
 
-//dropElements([1, 2, 3], function (n) {return n > 0;}) 
+dropElements([1, 2, 3], function (n) {return n > 0;}) 
 //should return [1, 2, 3].
 
-//dropElements([1, 2, 3, 4], function (n) {return n > 5;}) 
+dropElements([1, 2, 3, 4], function (n) {return n > 5;}) 
 //should return [].
 
-//dropElements([1, 2, 3, 7, 4], function (n) {return n > 3;}) 
+dropElements([1, 2, 3, 7, 4], function (n) {return n > 3;}) 
 //should return [7, 4].
 
-//dropElements([1, 2, 3, 9, 2], function (n) {return n > 2;}) 
+dropElements([1, 2, 3, 9, 2], function (n) {return n > 2;}) 
 //should return [3, 9, 2].
 
 
