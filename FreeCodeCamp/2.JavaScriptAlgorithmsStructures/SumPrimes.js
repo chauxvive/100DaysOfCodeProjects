@@ -24,16 +24,6 @@ function sumPrimes(num) {
 
     else {return undefined;}
 
-    //loop through primesList and check that newPrime not divisable by any in list
-    //if not, add to primesList
-    
-    
-    
-    // while (num > 1) {
-    //     primes.push(num);
-    //     num--;
-    // }
-
 
  let sum = primesList.reduce((a, b) => a + b, 0);
  //console.log(primesList);
