@@ -1,35 +1,38 @@
-function truthCheck(collection, pre) {
-    let truth = collection[1];
-    console.log(truth);
-    return pre;
+function truthCheck(collection, predicate) {
+
+   console.log( collection.every(function (x) {
+        return x.hasOwnProperty(predicate) && Boolean(x[predicate]);
+    }));
+
+
 }
 
 
 truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dipsy", "sex": "male" }, { "user": "Laa-Laa", "sex": "female" }, { "user": "Po", "sex": "female" }], "sex"); 
 //should return true.
 
-//truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dipsy" }, { "user": "Laa-Laa", "sex": "female" }, { "user": "Po", "sex": "female" }], "sex") 
+truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dipsy" }, { "user": "Laa-Laa", "sex": "female" }, { "user": "Po", "sex": "female" }], "sex") 
 //should return false.
 
-//truthCheck([{ "user": "Tinky-Winky", "sex": "male", "age": 0 }, { "user": "Dipsy", "sex": "male", "age": 3 }, { "user": "Laa-Laa", "sex": "female", "age": 5 }, { "user": "Po", "sex": "female", "age": 4 }], "age") 
+truthCheck([{ "user": "Tinky-Winky", "sex": "male", "age": 0 }, { "user": "Dipsy", "sex": "male", "age": 3 }, { "user": "Laa-Laa", "sex": "female", "age": 5 }, { "user": "Po", "sex": "female", "age": 4 }], "age") 
 //should return false.
 
-//truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true }, { "name": "FastForward", "onBoat": null }], "onBoat") 
+truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true }, { "name": "FastForward", "onBoat": null }], "onBoat") 
 //should return false
 
-//truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true, "alias": "Repete" }, { "name": "FastForward", "onBoat": true }], "onBoat") 
+truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true, "alias": "Repete" }, { "name": "FastForward", "onBoat": true }], "onBoat") 
 //should return true
 
-//truthCheck([{ "single": "yes" }], "single") 
+truthCheck([{ "single": "yes" }], "single") 
 //should return true
 
-//truthCheck([{ "single": "" }, { "single": "double" }], "single") 
+truthCheck([{ "single": "" }, { "single": "double" }], "single") 
 //should return false
 
-//truthCheck([{ "single": "double" }, { "single": undefined }], "single") 
+truthCheck([{ "single": "double" }, { "single": undefined }], "single") 
 //should return false
 
-//truthCheck([{ "single": "double" }, { "single": NaN }], "single") 
+truthCheck([{ "single": "double" }, { "single": NaN }], "single") 
 //should return false
 
 
