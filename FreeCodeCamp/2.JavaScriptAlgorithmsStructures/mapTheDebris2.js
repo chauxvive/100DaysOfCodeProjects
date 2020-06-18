@@ -1,42 +1,30 @@
 function orbitalPeriod(arr) {
     var GM = 398600.4418;
     var earthRadius = 6367.4447;
-   
 
-    // for (var i=0; i<arr.length; i++){
-    //     console.log(arr[i].avgAlt);
-    // }
+    //GM = Math.round(GM);
+    //earthRadius= Math.round(earthRadius);
 
-    GM = Math.round(GM);
-    earthRadius= Math.round(earthRadius);
+    arr.forEach(function (satelite) {
+        //  let R = earthRadius+Math.round(satelite.avgAlt);
+        let R = earthRadius + satelite.avgAlt;
 
-   console.log(GM);
+        satelite.orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(R, 3) / GM));
 
-    arr.forEach(function(satelite){
-        //satelite.planet = true;
-        //satelite.orbitalPeriod = earthRadius + satelite.avgAlt;
-        let R = earthRadius+Math.round(satelite.avgAlt);
-        //console.log(R);
-        
-        //console.log(Math.pow(2,2));
+        //satelite.orbitalPeriod = Math.round(2*Math.PI*Math.sqrt(((Math.pow(R, 3)/GM))))
 
-        satelite.orbitalPeriod = Math.round(2*Math.PI*Math.sqrt(((Math.pow(R, 3)/GM))))
-
-        //satelite.orbitalPeriod = Math.sqrt((4*(Math.PI^2)*(R^3))/GM)
-        //satelite.orbitalPeriod = 2 * Math.PI * Math.sqrt(R ^ 3 / GM);
-        //satelite.orbitalPeriod = Math.round((2*Math.PI*Math.sqrt((R^3)/GM))
-
-        //satelite.orbitalPeriod = 2*Math.PI * sqrt((earthRadius+satelite.avgAlt) ^ 3 / GM);
-        //T =2*pi*sqrt(r^3/GM);
-        // (T^2)/(R^3) = (4+ (pi^2))/GM
-        //r = earthRadius+avgAlt;
         delete satelite.avgAlt;
     });
 
     console.log(arr);
-
     return arr;
 }
+
+orbitalPeriod([{
+    name: "sputnik",
+    avgAlt: 35873.5553
+}]);
+
 
 // (T^2)/(R^3) = (4+ (pi^2))/GM
 //
